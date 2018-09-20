@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>小智</title>
+  <link rel="stylesheet" type="text/css" href="css/chat.css">
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">-->
+  <link rel="stylesheet" href="css/switchery.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/loaders.min.css">
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script src="chat.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/switchery.min.js"></script>
+
+<body>
+  <div class="chat_window">
+    <div class="top_menu">
+      <div class="toggle">
+        <label class="toggle-wrapper"> 主题
+          <input type="checkbox" class="js-theme-switch" checked />
+        </label>
+      </div>
+      <div class="title">智能对话</div>
+      <div class="toggle">
+        <label class="toggle-wrapper" id="help-toggle"  style="display:none;"> 帮助开发小智
+          <input type="checkbox" class="js-help-switch" checked />
+          <div class="toggle-tooltip" style="display:none;"> You can help! 
+            <div class="close" data-dynamite-selected="true">x</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <ul class="messages scrollbar-custom theme1"></ul>
+    <div class="bottom_wrapper clearfix">
+      <div class="message_input_wrapper">
+        <textarea class="message_input" placeholder="Type your message here..." ></textarea>
+      </div>
+      <div class="send_message">
+        <div class="icon" style="display:none"></div>
+        <div class="text">Send</div>
+      </div>
+    </div>
+  </div>
+  <div class="message_template">
+    <li class="message">
+      <div class="text_wrapper feedback" id="wrapper" style="width: 0px; opacity: 0;">
+        <div class="intent-info"  style="display: none">
+          <form id="question">
+            <p>Feedback Question</p>
+          <!--<span class="intent">intent name</span>-->
+            <div class="feedback-btn-container">
+              <span class="feedback_yes btn green">✓</span>
+              <span class="feedback_no btn red">X</span>
+            </div>
+            </form>
+          </form>
+        </div>
+      </div>
+      <div class="avatar"></div>
+      <div class="text_wrapper">
+        <div class="text"></div>
+        <div class="message-time"></div>
+      </div>
+    </li>
+  </div>  
+  <div id="checkTemplate" style="display:none">
+    <div id ="checkYes" style="display:none">
+      <svg class="checkmark positive" id="check-1" viewBox="0 0 52 52"><circle class="circle positive" cx="26" cy="26" r="25" fill="none"/><path class="check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg> </div>
+      <div id ="checkNo" style="display:none">
+      <svg class="checkmark negative" id="check-1" viewBox="0 0 52 52"><circle class="circle negative" cx="26" cy="26" r="25" fill="none"/><path class="check" fill="none" d="M13 13 L38 38 M13 38 L38 13"/></svg> </div>
+  </div>
+</body>
+
+
+</html>
